@@ -1,0 +1,54 @@
+﻿<!-- This root div container is mandatory! Do not remove it! The board controller is registered with the ng-controller directive.-->
+<div class="com-ilc-technologies-products itemfullheight itemfullwidth" ng-controller="com-ilc-technologies-productsBoardCtrl">
+
+    <div class="ng-hide itemgroup anim-slide-rtol" ng-show="!model.isAjaxInProgress">
+
+        <!-- Header -->
+		<div class="appheader">
+            <img ng-src="{{app.TileImage}}" />
+            <span class="appheaderdetailtitle">{{app.Name}}</span>
+
+            <ul class="list-inline pull-right appheader-options">
+                <filter-btn filter-query="model.filterQuery"></filter-btn>
+
+            </ul>
+        </div>   
+        <!-- End: Header -->
+
+        <!-- Custom menu to order list items -->
+        <div class="custom-ordering">
+            <div class="header">{{'COM-ILC-TECHNOLOGIES-PRODUCTS.ORDERBY' | translate }}</div>
+            <div class="content">
+                <span ng-class="{'selected': model.orderBy === 'Value.Name'}" ng-click="model.orderBy = 'Value.Name'">{{'COM-ILC-TECHNOLOGIES-PRODUCTS.NAME' | translate}}</span>
+                <span ng-class="{'selected': model.orderBy === 'Value.InstallationDate'}" ng-click="model.orderBy = 'Value.InstallationDate'">{{'COM-ILC-TECHNOLOGIES-PRODUCTS.DATE' | translate}}</span>
+                <span ng-class="{'selected': model.orderBy === 'Value.Id'}" ng-click="model.orderBy = 'Value.Id'">{{'COM-ILC-TECHNOLOGIES-PRODUCTS.PRODUCTNR' | translate}}</span>
+            </div>
+        </div>
+        <!-- End: Custom menu to order list items -->
+
+        <!-- List of products -->
+        <div class="itemgroupnext board-content-area fullheight-with-header" infinite-scroll="loadMore()" infinite-scroll-can-load="canLoadMore()" infinite-scroll-threshold="'100'">
+
+            <div class="itemfullwidth" ng-repeat="item in items | orderBy: model.orderBy : false | filter: filterQuery | limitTo: renderItemLimit track by item.Id" id="{{item.Id}}">
+
+
+                <div class="itemfullwidth" ng-click="selectItem(item)" ng-class="{'itemselected': isSelected(item)}">
+
+                    <div>
+                        <div class="default-list-inner">
+
+                            <div class="app-title">{{item.Header}}</div>
+                            <div class="app-date">{{item.Article}}</div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- End: List of products -->
+    </div>
+
+</div>

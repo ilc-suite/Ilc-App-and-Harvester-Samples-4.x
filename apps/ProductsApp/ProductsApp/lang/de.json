@@ -1,0 +1,18 @@
+﻿{
+	"COM-ILC-TECHNOLOGIES-PRODUCTS" : {		
+		"APPNAME": "Products",
+		"DETAIL": "Produktinformationen",
+		"ARTICLENR": "Artikelnummer",
+		"COLOR": "Farbe",
+		"STANDARDCOST": "Standard Kosten",
+		"LISTPRICE": "Listenpreis",
+		"SIZE": "Groesse",
+		"WEIGHT": "Gewicht",
+		"SELLSTARTDAY": "Beginn des Verkaufs",
+		"SELLENDDATE": "Ende des Verkaufs",
+		"ORDERBY": "Sortiert nach",
+		"NAME": "Name",
+		"DATE": "Datum",
+		"PRODUCTNR": "Produktnummer"
+	}	
+}

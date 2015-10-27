@@ -1,0 +1,11 @@
+﻿<!-- This root div container is mandatory! Do not remove it!-->
+<div class="com-ilc-technologies-products">
+
+    <div class="default-list-inner">      
+		<div class="app-title">{{item.Header}}</div>
+        <!-- The amDateFilter displays date objects depending on the provided format and the current language.
+            See https://github.com/urish/angular-moment for more information. -->
+		<div class="app-date">{{item.Value.InstallationDate | amDateFormat: 'll'}}</div>		    
+    </div>
+
+</div>

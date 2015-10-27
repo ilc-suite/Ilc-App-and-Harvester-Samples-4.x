@@ -1,0 +1,98 @@
+﻿<!-- This root div container is mandatory! Do not remove it! The details controller is registered with the ng-controller directive -->
+<div class="com-ilc-technologies-products detailsfullwidth detailsfullheight" ng-controller="com-ilc-technologies-productsDetailsCtrl">
+
+        <div class="detailscontent">
+        <div class="product-header">
+            <span ng-show="item.Header">{{item.Header}}</span>
+        </div>
+
+
+        <div class="product-details">
+            <div class="product-details-header">
+                {{'COM-ILC-TECHNOLOGIES-PRODUCTS.DETAIL' | translate}}
+            </div>
+
+            <table>
+                <tbody>
+                    <tr ng-if="item.Value.Articlenumber" >
+                        <th>
+                            {{'COM-ILC-TECHNOLOGIES-PRODUCTS.ARTICLENR' | translate}}
+                        </th>
+                        <td>
+                            {{item.Value.Articlenumber}}
+                        </td>
+                    </tr>
+                    <tr ng-if="item.Value.Color" >
+                        <th>
+                            {{'COM-ILC-TECHNOLOGIES-PRODUCTS.COLOR' | translate}}
+                        </th>
+                        <td>
+                            {{item.Value.Color}}
+                        </td>
+                    </tr>
+                    <tr ng-if="item.Value.StandardCost" >
+                        <th>
+                            {{'COM-ILC-TECHNOLOGIES-PRODUCTS.STANDARDCOST' | translate}}
+                        </th>
+                        <td>
+                            {{item.Value.StandardCost}}
+                        </td>
+                    </tr>
+                    <tr ng-if="item.Value.ListPrice" >
+                        <th>
+                            {{'COM-ILC-TECHNOLOGIES-PRODUCTS.LISTPRICE' | translate}}
+                        </th>
+                        <td>
+                            {{item.Value.ListPrice}}
+                        </td>
+                    </tr>
+                    <tr ng-if="item.Value.Size" >
+                        <th>
+                            {{'COM-ILC-TECHNOLOGIES-PRODUCTS.SIZE' | translate}}
+                        </th>
+                        <td>
+                            {{item.Value.Size}} {{item.Value.SizeMeasure}}
+                        </td>
+                    </tr>
+                    <tr ng-if="item.Value.Weight" >
+                        <th>
+                            {{'COM-ILC-TECHNOLOGIES-PRODUCTS.WEIGHT' | translate}}
+                        </th>
+                        <td>
+                            {{item.Value.Weight}} {{item.Value.WeightMeasure}}
+                        </td>
+                    </tr>
+                    <!-- The amDateFilter displays date objects depending on the provided format and the current language.
+                        See https://github.com/urish/angular-moment for more information. -->
+                    <tr ng-if="item.Value.InstallationDate" >
+                        <th>
+                            {{'COM-ILC-TECHNOLOGIES-PRODUCTS.SELLSTARTDAY' | translate}}
+                        </th>
+                        <td>
+                            {{item.Value.InstallationDate| amDateFormat : 'll'}}
+                        </td>
+                    </tr>
+                    <tr ng-if="item.Value.SellEndDate" >
+                        <th>
+                            {{'COM-ILC-TECHNOLOGIES-PRODUCTS.SELLENDDATE' | translate}}
+                        </th>
+                        <td>
+                            {{item.Value.SellEndDate | amDateFormat : 'll'}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="product-image">
+            <div ng-show="model.loadingPhoto" class="product-loading-spinner">
+                <i class="fa fa-spinner fa-pulse"></i>
+            </div>
+            <div ng-if="item.Value.ProductPhoto && !model.loadingPhoto" class="product-photo">            
+                <img ng-src="{{item.Value.ProductPhoto.ImgSrcString}}" />
+            </div>
+        </div>
+
+    </div>
+
+</div>

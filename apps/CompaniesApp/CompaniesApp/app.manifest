@@ -1,0 +1,48 @@
+﻿{
+    "id": "com-ilc-technologies-companies",
+    "name": "Companies",
+    "version": "0.0.1",
+    "core_version": "4.0.0.0",
+    "manifest_version": 3,
+
+    "product": "Sample App: Companies",
+    "description": "This app is a basic example for an app that displays a Company object. This example demonstates the use of a custom detail view and controller.",
+    "company": "ILC Technologies GmbH",
+    "copyright": "Copyright ©  2015",
+    "email": "info@ilc-technologies.com",
+    "homepage": "http://ilc-suite.de",
+    "address": {
+        "address_line1": "Am Essigberg 3",
+        "address_line2": "",
+        "postal_code": "94315",
+        "city": "Straubing"
+    },
+
+
+    "angular": {
+        "models": [ "Company" ],
+        "modules": [ ],
+        "views": {
+            "cube": "",
+            "board": "",
+            "detail": "template/details.html",
+            "listitem": "",
+            "timelineitem": ""
+        },
+    },
+
+    "icons": {
+        "tileImage": "img/app-company64x64.png",
+        "appIcon16": "",
+        "appIcon24": "",
+        "appIcon32": "",
+        "appIcon48": "",
+        "appIcon128": ""
+    },    
+
+    "dependencies": {
+        "css": [ "css/styles.css" ],
+        "js":  [ "js/details-ctrl.js"
+        ]
+    }  
+}

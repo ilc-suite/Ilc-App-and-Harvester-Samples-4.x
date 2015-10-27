@@ -1,0 +1,52 @@
+﻿<!-- This app doesn't need a details controller, so the root container has no ng-controller directive. -->
+<div class="com-ilc-technologies-contacts detailsfullwidth detailsfullheight">
+
+    <div class="detailscontent">
+        <div class="contact-header">
+            <div>
+                <span ng-show="item.Value.Lastname">{{item.Value.Firstname}} {{item.Value.Lastname}}</span> 
+            </div>
+            <div class="header-small">
+                <span ng-show="item.Value.JobTitle">{{item.Value.JobTitle}}</span>
+            </div>
+            
+        </div>
+
+        <div class="contact-details">
+
+            <div class="profile-image-container">
+                <div class="profile-image">
+                    <img ng-if="item.Value.PictureUrl" class="profile-image" ng-src="{{item.Value.PictureUrl}}" />
+                    <div ng-if="!item.Value.PictureUrl" class="profile-image-icon">
+                        <div>
+                            <i class="fa fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table>
+                <tbody>
+                    <tr ng-repeat="email in item.Value.EMails">
+                        <th>
+                            Email:
+                        </th>
+                        <td>
+                            <a ng-href="{{'mailto:' + email}}">{{email}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <!--The translation filter replaces the key with translations provided in the language files-->
+                        {{ 'COM-ILC-TECHNOLOGIES-CONTACTS.PHONE' | translate }}: 
+                        </th>
+                        <td>
+                            {{item.Value.Address.Phone}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

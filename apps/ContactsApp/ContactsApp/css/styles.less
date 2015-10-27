@@ -1,0 +1,151 @@
+﻿@clr1: #4e535f;
+@clr2: #999;
+@clr3: #cbcbcb;
+@clr4: #a1a4aa;
+@bgr1: #ebebeb;
+@bgr2: #f5f5f5;
+
+.com-ilc-technologies-contacts{
+	
+    color: @clr1;
+
+    .contact-listitem{
+        display: block;
+        padding: 7px;
+        position: relative;
+        margin: 1px 0;
+        cursor: pointer;
+        background-color: @bgr2;
+        min-height: 50px;
+
+        &.hover{
+            color: white;
+        }
+
+        .contact-image-left{
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            width: 57px;
+            
+            .contact-image-left-inner{
+                margin: 5px 5px 0;
+                width: 40px;
+                height: 40px;
+                line-height: 36px;
+                text-align: center;
+                overflow: hidden;
+                color: @clr4;
+
+                img{
+                    width: 40px;
+                }
+
+                div{
+                    width: 40px;
+                    height: 40px;
+                    line-height: 38px;
+                    text-align: center;
+                    border: 1px solid @clr4;
+                    margin-bottom: 5px;
+                    overflow: hidden;
+
+                    i{
+                        position: relative;
+                        top: 2px;
+                    }
+
+                }
+            }
+        }
+
+        .contact-listitem-content{
+            padding-left: 45px;
+        }
+    }
+
+	.contact-header{
+        margin: 10px 15px;
+        padding-bottom: 10px;
+        font-size: 15px;
+        border-bottom: 1px dashed @clr3;
+
+        .header-small{
+            font-size: 13px;
+            color: @clr2;
+        }
+	}
+    
+    .contact-details{
+        max-width: 100%;
+        overflow-x: auto;
+        padding: 0 15px;
+        position: relative;
+        min-height: ~"calc(100% - 70px)";
+
+        table{
+            width: 85%;
+            font-size: 13px;
+            font-weight: 400;
+            color: @clr1;
+            margin-left: 15%;
+
+            a{
+                color: @clr1;
+                cursor: pointer;
+            }
+
+            th{
+                font-weight: 400;
+                background: @bgr1;
+                padding: 10px;
+                border-right: 3px solid white;
+                border-bottom: 3px solid white;
+            }
+            td{
+                background: @bgr2; 
+                padding: 10px;
+                border-bottom: 3px solid white;
+            }
+        }
+
+        .profile-image-container{
+            width: 15%;
+            height: auto;
+            padding-top: 5px;
+            text-align: center;
+            top: 0;
+            position: absolute;
+
+        }
+
+        .profile-image{
+            height: auto;
+            border: none;
+
+            img{
+                width: calc(~"100% - 20px");
+                min-width: 20px;
+            }
+        }
+
+        .profile-image-icon{
+            div{
+                padding: 15px 0px;
+                border: 1px solid @clr2;
+                display: inline-block;
+                width:75%;
+                min-width: 20px;
+                max-width: 60px;
+                i{
+                    color: @clr2;
+                }
+            }
+       
+            color: @clr4;
+            padding: 0px;
+            font-size: 20px;
+        }
+    }
+}

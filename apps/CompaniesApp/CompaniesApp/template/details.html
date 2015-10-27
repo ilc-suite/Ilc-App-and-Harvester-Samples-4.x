@@ -1,0 +1,39 @@
+﻿<!-- To register a controller for the details view register the controller with the ng-controller directive. -->
+<div class="com-ilc-technologies-companies detailsfullwidth detailsfullheight" ng-controller="com-ilc-technologies-companiesDetailsCtrl">
+
+    <div class="detailscontent">
+        <div class="company-header">
+            <!-- The current detail item is stored in $scope.item and its properties can be displayed in the view e.g. with {{item.Value.Name}}.-->
+            <span ng-show="item.Value.Name">{{item.Value.Name}}</span>
+        </div>
+
+        <div class="company-details">
+            <table>
+                <tbody>
+                    <tr ng-repeat="address in item.Value.Addresses">
+                        <th>
+                            <!-- The translate directive replaces the language key with the corresponding translation from your language files. -->
+                            <span translate="COM-ILC-TECHNOLOGIES-COMPANIES.ADDRESS"></span>
+                        </th>
+                        <td>
+                            <span ng-show="address.Address">{{address.Address}}</span><br />
+                            <span ng-show="address.Zip">{{address.Zip}} </span>
+                            <span ng-show="address.City">{{address.City}}</span><br />
+                            <span ng-show="address.Country">{{address.Country}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+       
+            <div class="open-map">
+                <a  ng-href="{{model.getGoogleMapsUrl()}}" target="_blank">
+                    <!-- If you prefer you can also use the translate filter instead of the translate directive. Is works just as well.-->
+                    <span class="glyphicon glyphicon-map-marker"></span> {{ 'COM-ILC-TECHNOLOGIES-COMPANIES.OPENMAP' | translate }}
+                </a>
+            </div>
+
+        </div>
+    </div>    
+
+</div>

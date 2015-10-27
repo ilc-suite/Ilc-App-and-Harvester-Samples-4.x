@@ -1,0 +1,45 @@
+.com-ilc-technologies-companies {
+  color: #4e535f;
+}
+.com-ilc-technologies-companies .company-header {
+  margin: 10px 15px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  border-bottom: 1px dashed #cbcbcb;
+}
+.com-ilc-technologies-companies .company-details {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0 15px;
+}
+.com-ilc-technologies-companies .company-details table {
+  width: 100%;
+  font-size: 13px;
+  font-weight: 400;
+  color: #4e535f;
+}
+.com-ilc-technologies-companies .company-details table a {
+  color: #4e535f;
+  cursor: pointer;
+}
+.com-ilc-technologies-companies .company-details table th {
+  font-weight: 400;
+  background: #ebebeb;
+  padding: 10px;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
+  vertical-align: top;
+}
+.com-ilc-technologies-companies .company-details table td {
+  background: #f5f5f5;
+  padding: 10px;
+  border-bottom: 3px solid white;
+}
+.com-ilc-technologies-companies .company-details .open-map {
+  padding-top: 15px;
+}
+.com-ilc-technologies-companies .company-details .open-map a {
+  color: #4e535f;
+  font-size: 15px;
+  cursor: pointer;
+}

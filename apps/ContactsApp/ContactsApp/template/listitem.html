@@ -1,0 +1,22 @@
+﻿<div class="com-ilc-technologies-contacts">
+
+    <div class="contact-listitem default-list-inner">
+   
+		<div class="contact-image-left">
+            <div class="contact-image-left-inner">
+                <img ng-if="item.Value.PictureUrl" ng-src="{{item.Value.PictureUrl}}" />
+                <div ng-if="!item.Value.PictureUrl" class="details-image">
+                    <i class="fa fa-user"></i>
+                </div>
+            </div>
+        </div>			    
+   
+        <div class="contact-listitem-content">
+            <div class="app-title">{{item.Value.Firstname}} {{item.Value.Lastname}} <span class="app-inline-data pull-right">{{item.Value.Address.Phone}}</span></div>
+            <div class="app-small-text">
+                {{item.Value.JobTitle}}
+            </div>
+        </div>
+    </div>
+
+</div>
