@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HarvesterPublishInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Configuration>Release</Configuration>
+  <SourceDirectory>C:\Users\BenjaminE\AppData\Local\Temp\IlcHarvesterPublish</SourceDirectory>
+  <TargetPath>D:\temp\harvester\Ilc.SampleHarvester.AdventureWorks.msi</TargetPath>
+  <DisplayName>AdventureWorks</DisplayName>
+  <Manufacturer>ILC Technologies GmbH</Manufacturer>
+  <HarvesterNamespace>Ilc.SampleHarvester.AdventureWorks</HarvesterNamespace>
+  <Guid>64409a87-a66d-4e39-b1ad-7e1eef0d2dbe</Guid>
+  <WixLocation>C:\Program Files (x86)\ILC\Sdk\WixToolset</WixLocation>
+  <WixSdkLocation>C:\Program Files (x86)\ILC\Sdk\WixToolset\sdk</WixSdkLocation>
+  <UseAssemblyVersion>true</UseAssemblyVersion>
+  <SharedAssemblyInfos>
+    <SharedAssemblyInfo>
+      <Name>Ilc.BusinessObjects.AdventureWorks.dll</Name>
+      <SourcePath>C:\Users\BenjaminE\AppData\Local\Temp\IlcHarvesterPublish\bin\Ilc.BusinessObjects.AdventureWorks.dll</SourcePath>
+    </SharedAssemblyInfo>
+  </SharedAssemblyInfos>
+  <VersionString>1.0.0.0</VersionString>
+</HarvesterPublishInfo>

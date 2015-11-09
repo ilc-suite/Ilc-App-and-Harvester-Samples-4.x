@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ilc-develop.azurewebsites.net/sampleservice/SampleService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="InformationObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PropertyBag" nillable="true" type="tns:KeyValueDictionary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InformationObject" nillable="true" type="tns:InformationObject" />
+  <xs:complexType name="KeyValueDictionary">
+    <xs:sequence>
+      <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip" />
+    </xs:sequence>
+    <xs:attribute ref="ser:FactoryType" />
+  </xs:complexType>
+  <xs:element name="KeyValueDictionary" nillable="true" type="tns:KeyValueDictionary" />
+  <xs:complexType name="LulinUserIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Container" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LulinUserIdentifier" nillable="true" type="tns:LulinUserIdentifier" />
+  <xs:complexType name="DetailsLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Harvester" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InformationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetailsLink" nillable="true" type="tns:DetailsLink" />
+  <xs:complexType name="DummyInformationObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RepresentingType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DummyInformationObject" nillable="true" type="tns:DummyInformationObject" />
+</xs:schema>

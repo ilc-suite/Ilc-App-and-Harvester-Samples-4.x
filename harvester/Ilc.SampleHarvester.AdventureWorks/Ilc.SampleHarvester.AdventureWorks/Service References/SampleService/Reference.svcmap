@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cce5151e-b5ea-450f-b6f9-1fd29cd0cdea" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ilc-develop.azurewebsites.net/SampleService/SampleService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SampleService.xsd" MetadataType="Schema" ID="92b55ed0-02cf-4e5c-8792-2595adca6578" SourceId="1" SourceUrl="http://ilc-develop.azurewebsites.net/sampleservice/SampleService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SampleService.disco" MetadataType="Disco" ID="4b110853-b8f4-408b-b40e-87fd42cd3de6" SourceId="1" SourceUrl="http://ilc-develop.azurewebsites.net/sampleservice/SampleService.svc?disco" />
+    <MetadataFile FileName="SampleService1.xsd" MetadataType="Schema" ID="9abdb4f7-9e3b-4773-a2ba-098a491d57fc" SourceId="1" SourceUrl="http://ilc-develop.azurewebsites.net/sampleservice/SampleService.svc?xsd=xsd4" />
+    <MetadataFile FileName="SampleService.wsdl" MetadataType="Wsdl" ID="eba706f7-daa1-4819-b527-55333a052861" SourceId="1" SourceUrl="http://ilc-develop.azurewebsites.net/sampleservice/SampleService.svc?wsdl" />
+    <MetadataFile FileName="SampleService2.xsd" MetadataType="Schema" ID="9d583de9-b162-4aeb-9d8b-033e08f02803" SourceId="1" SourceUrl="http://ilc-develop.azurewebsites.net/sampleservice/SampleService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SampleService3.xsd" MetadataType="Schema" ID="4a706cb9-8447-473b-8272-6000171d0534" SourceId="1" SourceUrl="http://ilc-develop.azurewebsites.net/sampleservice/SampleService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SampleService4.xsd" MetadataType="Schema" ID="18307fe6-0cd1-4161-af39-4f084cda966d" SourceId="1" SourceUrl="http://ilc-develop.azurewebsites.net/sampleservice/SampleService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

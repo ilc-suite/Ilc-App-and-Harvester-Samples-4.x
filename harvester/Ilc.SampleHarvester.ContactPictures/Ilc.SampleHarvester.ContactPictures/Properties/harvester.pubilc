@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HarvesterPublishInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Configuration>Release</Configuration>
+  <SourceDirectory>C:\Users\BenjaminE\AppData\Local\Temp\IlcHarvesterPublish</SourceDirectory>
+  <TargetPath>D:\temp\harvester\Ilc.SampleHarvester.ContactPictures.msi</TargetPath>
+  <DisplayName>PictureServer</DisplayName>
+  <Manufacturer>ILC Technolgies Gmb H</Manufacturer>
+  <HarvesterNamespace>Ilc.SampleHarvester.ContactPictures</HarvesterNamespace>
+  <Guid>19d7a0d9-4e65-4e1c-bbdb-e30b38c34c02</Guid>
+  <WixLocation>C:\Program Files (x86)\ILC\Sdk\WixToolset</WixLocation>
+  <WixSdkLocation>C:\Program Files (x86)\ILC\Sdk\WixToolset\sdk</WixSdkLocation>
+  <UseAssemblyVersion>true</UseAssemblyVersion>
+  <SharedAssemblyInfos />
+  <VersionString>1.0.0.0</VersionString>
+</HarvesterPublishInfo>

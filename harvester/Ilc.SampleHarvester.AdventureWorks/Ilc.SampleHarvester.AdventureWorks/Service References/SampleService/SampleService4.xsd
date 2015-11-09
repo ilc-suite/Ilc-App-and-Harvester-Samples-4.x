@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ilc-develop.azurewebsites.net/sampleservice/SampleService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ilc-develop.azurewebsites.net/sampleservice/SampleService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" />
+  <xs:complexType name="ArrayOfCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompany" nillable="true" type="tns:ArrayOfCompany" />
+  <xs:complexType name="Company">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q1:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfPostAddress" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Classifications" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Domains" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EMails" nillable="true" type="q4:ArrayOfstring" />
+          <xs:element minOccurs="0" name="EmployeeCount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndYear" type="xs:int" />
+          <xs:element minOccurs="0" name="FoundedYear" type="xs:int" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Industries" nillable="true" type="q5:ArrayOfstring" />
+          <xs:element minOccurs="0" name="LogoUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Networks" nillable="true" type="tns:ArrayOfSocialNetworkProfile" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StockExchange" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Company" nillable="true" type="tns:Company" />
+  <xs:complexType name="Person">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q6:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="tns:PostAddress" />
+          <xs:element minOccurs="0" name="Awards" nillable="true" type="tns:ArrayOfAward" />
+          <xs:element minOccurs="0" name="Birthday" nillable="true" type="xs:dateTime" />
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EMails" nillable="true" type="q7:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Education" nillable="true" type="tns:ArrayOfSchool" />
+          <xs:element minOccurs="0" name="Expertise" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Firstname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Haves" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InstantMessagingAccounts" nillable="true" type="tns:ArrayOfContactWebAppearance" />
+          <xs:element minOccurs="0" name="Interests" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JobTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Languages" nillable="true" type="tns:ArrayOfLanguage" />
+          <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Networks" nillable="true" type="tns:ArrayOfSocialNetworkProfile" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PictureUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Positions" nillable="true" type="tns:ArrayOfJobPosition" />
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Qualifications" nillable="true" type="q8:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Wants" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WebProfiles" nillable="true" type="tns:ArrayOfContactWebAppearance" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="PostAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostAddress" nillable="true" type="tns:PostAddress" />
+  <xs:complexType name="ArrayOfAward">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Award" nillable="true" type="tns:Award" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAward" nillable="true" type="tns:ArrayOfAward" />
+  <xs:complexType name="Award">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Award" nillable="true" type="tns:Award" />
+  <xs:complexType name="ArrayOfSchool">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="School" nillable="true" type="tns:School" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSchool" nillable="true" type="tns:ArrayOfSchool" />
+  <xs:complexType name="School">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Degree" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="School" nillable="true" type="tns:School" />
+  <xs:complexType name="ArrayOfContactWebAppearance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactWebAppearance" nillable="true" type="tns:ContactWebAppearance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContactWebAppearance" nillable="true" type="tns:ArrayOfContactWebAppearance" />
+  <xs:complexType name="ContactWebAppearance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactWebAppearance" nillable="true" type="tns:ContactWebAppearance" />
+  <xs:complexType name="ArrayOfLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Language" nillable="true" type="tns:Language" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLanguage" nillable="true" type="tns:ArrayOfLanguage" />
+  <xs:complexType name="Language">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Skill" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Language" nillable="true" type="tns:Language" />
+  <xs:complexType name="ArrayOfSocialNetworkProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SocialNetworkProfile" nillable="true" type="tns:SocialNetworkProfile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSocialNetworkProfile" nillable="true" type="tns:ArrayOfSocialNetworkProfile" />
+  <xs:complexType name="SocialNetworkProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Network" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Online" type="tns:OnlineState" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SocialNetworkProfile" nillable="true" type="tns:SocialNetworkProfile" />
+  <xs:simpleType name="OnlineState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Online" />
+      <xs:enumeration value="Offline" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OnlineState" nillable="true" type="tns:OnlineState" />
+  <xs:complexType name="ArrayOfJobPosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobPosition" nillable="true" type="tns:JobPosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobPosition" nillable="true" type="tns:ArrayOfJobPosition" />
+  <xs:complexType name="JobPosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormOfEmployment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Industry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCurrent" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPrimary" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobPosition" nillable="true" type="tns:JobPosition" />
+  <xs:complexType name="ContactPerson">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Person">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContactPerson" nillable="true" type="tns:ContactPerson" />
+  <xs:complexType name="ContactPersonInteraction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q9:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InteractionLog" nillable="true" type="tns:ArrayOfInteractionLog" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContactPersonInteraction" nillable="true" type="tns:ContactPersonInteraction" />
+  <xs:complexType name="ArrayOfInteractionLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InteractionLog" nillable="true" type="tns:InteractionLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInteractionLog" nillable="true" type="tns:ArrayOfInteractionLog" />
+  <xs:complexType name="InteractionLog">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q10:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttemptFailed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CampaignNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Canceled" type="xs:boolean" />
+          <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Comments" nillable="true" type="q11:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Contact" nillable="true" type="tns:ContactPerson" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Evaluation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InteractionTemplate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OpportunityNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesPerson" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InteractionLog" nillable="true" type="tns:InteractionLog" />
+  <xs:complexType name="FileLinkCollection">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q12:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FileLinks" nillable="true" type="tns:ArrayOfFileLink" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FileLinkCollection" nillable="true" type="tns:FileLinkCollection" />
+  <xs:complexType name="ArrayOfFileLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FileLink" nillable="true" type="tns:FileLink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFileLink" nillable="true" type="tns:ArrayOfFileLink" />
+  <xs:complexType name="FileLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Thumbnail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileLink" nillable="true" type="tns:FileLink" />
+  <xs:complexType name="InfoPointCommentLike">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q13:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InfoPointCommentId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InfoPointCommentLike" nillable="true" type="tns:InfoPointCommentLike" />
+  <xs:complexType name="FacebookContacts">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q14:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PossibleContacts" nillable="true" type="tns:ArrayOfPerson" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FacebookContacts" nillable="true" type="tns:FacebookContacts" />
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
+  <xs:complexType name="SalesOrder">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q15:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BillToCustomerCity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BillToCustomerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BillToCustomerNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookEntryDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentState" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExternalDocumentNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaintenanceContractSumYear" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SalesOrderDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SalesOrderNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesOrderSum" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SearchName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SalesOrder" nillable="true" type="tns:SalesOrder" />
+  <xs:complexType name="CalendarEvents">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q16:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Events" nillable="true" type="tns:ArrayOfCalendarEvent" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CalendarEvents" nillable="true" type="tns:CalendarEvents" />
+  <xs:complexType name="ArrayOfCalendarEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalendarEvent" nillable="true" type="tns:CalendarEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalendarEvent" nillable="true" type="tns:ArrayOfCalendarEvent" />
+  <xs:complexType name="CalendarEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="End" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsException" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMeeting" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPrivate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRecurring" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsWholeDay" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Start" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalendarEvent" nillable="true" type="tns:CalendarEvent" />
+  <xs:complexType name="InfoPointComment">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q17:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Author" nillable="true" type="q17:LulinUserIdentifier" />
+          <xs:element minOccurs="0" name="AuthorName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChangedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Likes" nillable="true" type="tns:ArrayOfLikeItem" />
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InfoPointComment" nillable="true" type="tns:InfoPointComment" />
+  <xs:complexType name="ArrayOfLikeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LikeItem" nillable="true" type="tns:LikeItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLikeItem" nillable="true" type="tns:ArrayOfLikeItem" />
+  <xs:complexType name="LikeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" minOccurs="0" name="User" nillable="true" type="q18:LulinUserIdentifier" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LikeItem" nillable="true" type="tns:LikeItem" />
+  <xs:complexType name="Email">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q19:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BodyLink" nillable="true" type="q19:DetailsLink" />
+          <xs:element minOccurs="0" name="CC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsFromMe" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Recipient" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SendDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Sender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Email" nillable="true" type="tns:Email" />
+  <xs:complexType name="EmailAttachmentContent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q20:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmailAttachmentContent" nillable="true" type="tns:EmailAttachmentContent" />
+  <xs:complexType name="EmailBody">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q21:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Attachments" nillable="true" type="tns:ArrayOfEmailAttachment" />
+          <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Recipient" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sender" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmailBody" nillable="true" type="tns:EmailBody" />
+  <xs:complexType name="ArrayOfEmailAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmailAttachment" nillable="true" type="tns:EmailAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmailAttachment" nillable="true" type="tns:ArrayOfEmailAttachment" />
+  <xs:complexType name="EmailAttachment">
+    <xs:sequence>
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" minOccurs="0" name="ContentLink" nillable="true" type="q22:DetailsLink" />
+      <xs:element minOccurs="0" name="IsMail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmailAttachment" nillable="true" type="tns:EmailAttachment" />
+  <xs:complexType name="Expert">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Person">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Boost" type="xs:long" />
+          <xs:element minOccurs="0" name="Events" nillable="true" type="tns:ArrayOfCalendarEvent" />
+          <xs:element minOccurs="0" name="IsCustomerSalesPerson" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastestActivity" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="WorktypeFractions" nillable="true" type="tns:ArrayOfWorktypeFraction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Expert" nillable="true" type="tns:Expert" />
+  <xs:complexType name="ArrayOfWorktypeFraction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorktypeFraction" nillable="true" type="tns:WorktypeFraction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorktypeFraction" nillable="true" type="tns:ArrayOfWorktypeFraction" />
+  <xs:complexType name="WorktypeFraction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="Duration" type="xs:double" />
+      <xs:element minOccurs="0" name="Percentage" type="xs:double" />
+      <xs:element minOccurs="0" name="Worktype" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorktypeFraction" nillable="true" type="tns:WorktypeFraction" />
+  <xs:complexType name="GenericObject">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q23:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Article" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:ArrayOfGenericGroup" />
+          <xs:element minOccurs="0" name="Header" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Links" nillable="true" type="tns:ArrayOfObjectLink" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericObject" nillable="true" type="tns:GenericObject" />
+  <xs:complexType name="ArrayOfGenericGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericGroup" nillable="true" type="tns:GenericGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenericGroup" nillable="true" type="tns:ArrayOfGenericGroup" />
+  <xs:complexType name="GenericGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Properties" nillable="true" type="tns:ArrayOfGenericProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericGroup" nillable="true" type="tns:GenericGroup" />
+  <xs:complexType name="ArrayOfGenericProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericProperty" nillable="true" type="tns:GenericProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenericProperty" nillable="true" type="tns:ArrayOfGenericProperty" />
+  <xs:complexType name="GenericProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericProperty" nillable="true" type="tns:GenericProperty" />
+  <xs:complexType name="ArrayOfObjectLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ObjectLink" nillable="true" type="tns:ObjectLink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfObjectLink" nillable="true" type="tns:ArrayOfObjectLink" />
+  <xs:complexType name="ObjectLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectLink" nillable="true" type="tns:ObjectLink" />
+  <xs:complexType name="GenericDocument">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Files" nillable="true" type="tns:ArrayOfFileLink" />
+          <xs:element minOccurs="0" name="ThumbnailUrl" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericDocument" nillable="true" type="tns:GenericDocument" />
+  <xs:complexType name="HardwareChange">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q24:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InstalledBasis" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InstalledBasisDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InstalledBasisSerialNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartComment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostingDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="State" type="tns:ActiveState" />
+          <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HardwareChange" nillable="true" type="tns:HardwareChange" />
+  <xs:simpleType name="ActiveState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Inactive" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActiveState" nillable="true" type="tns:ActiveState" />
+  <xs:complexType name="Incident">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q25:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostingDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="State" type="tns:ActiveState" />
+          <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Incident" nillable="true" type="tns:Incident" />
+  <xs:complexType name="NoticeContent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q26:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RichText" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NoticeContent" nillable="true" type="tns:NoticeContent" />
+  <xs:complexType name="News">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q27:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="News" nillable="true" type="tns:News" />
+  <xs:complexType name="Notice">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q28:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoteUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdatedDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Notice" nillable="true" type="tns:Notice" />
+  <xs:complexType name="PersonPardotInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q29:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PardotActivities" nillable="true" type="tns:ArrayOfProspectActivity" />
+          <xs:element minOccurs="0" name="Score" type="xs:int" />
+          <xs:element minOccurs="0" name="SourceCampaign" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonPardotInformation" nillable="true" type="tns:PersonPardotInformation" />
+  <xs:complexType name="ArrayOfProspectActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProspectActivity" nillable="true" type="tns:ProspectActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProspectActivity" nillable="true" type="tns:ArrayOfProspectActivity" />
+  <xs:complexType name="ProspectActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProspectActivity" nillable="true" type="tns:ProspectActivity" />
+  <xs:complexType name="Product">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q30:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InstallationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="Project">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q31:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" type="tns:ActiveState" />
+          <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubProjects" nillable="true" type="tns:ArrayOfProject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Project" nillable="true" type="tns:Project" />
+  <xs:complexType name="ArrayOfProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Project" nillable="true" type="tns:Project" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProject" nillable="true" type="tns:ArrayOfProject" />
+  <xs:complexType name="SocialActivity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q32:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Actor" nillable="true" type="tns:SocialActor" />
+          <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Likes" nillable="true" type="tns:ArrayOfSocialActor" />
+          <xs:element minOccurs="0" name="LikesCount" type="xs:int" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Platform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepliedToId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThreadId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WebUrl" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SocialActivity" nillable="true" type="tns:SocialActivity" />
+  <xs:complexType name="SocialActor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PicUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebUrl" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SocialActor" nillable="true" type="tns:SocialActor" />
+  <xs:complexType name="ArrayOfSocialActor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SocialActor" nillable="true" type="tns:SocialActor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSocialActor" nillable="true" type="tns:ArrayOfSocialActor" />
+  <xs:complexType name="SocialActivityComments">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q33:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="tns:ArrayOfSocialActivity" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SocialActivityComments" nillable="true" type="tns:SocialActivityComments" />
+  <xs:complexType name="ArrayOfSocialActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SocialActivity" nillable="true" type="tns:SocialActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSocialActivity" nillable="true" type="tns:ArrayOfSocialActivity" />
+  <xs:complexType name="WikipediaContent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q34:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WikipediaContent" nillable="true" type="tns:WikipediaContent" />
+  <xs:complexType name="YammerAction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://schemas.datacontract.org/2004/07/Ilc.BusinessObjects" base="q35:InformationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="tns:SocialActivity" />
+          <xs:element minOccurs="0" name="CreatedAt" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LikeMessageId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="YammerAction" nillable="true" type="tns:YammerAction" />
+  <xs:complexType name="ArrayOfPostAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PostAddress" nillable="true" type="tns:PostAddress" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPostAddress" nillable="true" type="tns:ArrayOfPostAddress" />
+  <xs:complexType name="ArrayOfContactPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactPerson" nillable="true" type="tns:ContactPerson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContactPerson" nillable="true" type="tns:ArrayOfContactPerson" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+</xs:schema>
