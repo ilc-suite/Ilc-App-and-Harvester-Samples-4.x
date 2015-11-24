@@ -3,8 +3,8 @@
   <Configuration>Release</Configuration>
   <SourceDirectory>C:\Users\BenjaminE\AppData\Local\Temp\IlcHarvesterPublish</SourceDirectory>
   <TargetPath>D:\temp\harvester\Ilc.SampleHarvester.ContactPictures.msi</TargetPath>
-  <DisplayName>PictureServer</DisplayName>
-  <Manufacturer>ILC Technolgies Gmb H</Manufacturer>
+  <DisplayName>ContactPictures</DisplayName>
+  <Manufacturer>ILC Technolgies GmbH</Manufacturer>
   <HarvesterNamespace>Ilc.SampleHarvester.ContactPictures</HarvesterNamespace>
   <Guid>19d7a0d9-4e65-4e1c-bbdb-e30b38c34c02</Guid>
   <WixLocation>C:\Program Files (x86)\ILC\Sdk\WixToolset</WixLocation>
