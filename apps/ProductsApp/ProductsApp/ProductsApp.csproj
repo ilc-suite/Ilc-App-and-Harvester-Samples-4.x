@@ -88,7 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\styles.less" />
-    <Content Include="img\tile.png" />
     <Content Include="js\board-ctrl.js" />
     <Content Include="js\details-ctrl.js" />
     <Content Include="lang\de.json" />
