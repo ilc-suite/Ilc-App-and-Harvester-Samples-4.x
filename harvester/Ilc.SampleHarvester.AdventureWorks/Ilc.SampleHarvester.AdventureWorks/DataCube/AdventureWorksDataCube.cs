@@ -66,24 +66,32 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
             if (company == null)
                 return;
             dataInterface.Insert(company);
-            
-            var contactsLoader = new ContactsLoader();
-            var contacts = contactsLoader.LoadContactsByCompany(company);
-            dataInterface.Insert(contacts);
+            dataInterface.Flush();
 
+            if (dataInterface.MustCollect<ContactPerson>())
+            {
+                var contactsLoader = new ContactsLoader();
+                var contacts = contactsLoader.LoadContactsByCompany(company);
+                dataInterface.Insert(contacts);
+                dataInterface.Flush();
+            }
             
             // Step 3 
             // we Add the ProductsLoader and the Ilc.BusinessObjects.AdventureWorks Library
             // to showcase the Detail-Loading procedure
             // Details-Loading is deferred by creating and setting an DetailsLink for the InformationObject
-            var productsLoader = new ProductsLoader();
-            var products = productsLoader.LoadProductByCompany(company);
+            if (dataInterface.MustCollect<BikeProduct>())
+            {
+                var productsLoader = new ProductsLoader();
+                var products = productsLoader.LoadProductByCompany(company);
 
-            foreach (var product in products)
-            {                
-                var detailsLink = new List<DetailsLink>();
-                detailsLink.Add(dataInterface.CreateDetailsLink(Constants.ProductPhotoDetailslink, product.Id));
-                dataInterface.Insert(product, null, detailsLink);
+                foreach (var product in products)
+                {
+                    var detailsLink = new List<DetailsLink>();
+                    detailsLink.Add(dataInterface.CreateDetailsLink(Constants.ProductPhotoDetailslink, product.Id));
+                    dataInterface.Insert(product, null, detailsLink);
+                }
+                dataInterface.Flush();
             }
         }
 
